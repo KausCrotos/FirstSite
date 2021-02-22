@@ -7,6 +7,7 @@
     "main"
     "footer";
 }
+
 .header {
   color: black;
   background-color: lightgray;
@@ -16,6 +17,7 @@
   align-items: center;
   grid-area: header;
 }
+
 .main {
   display: flex;
   justify-content: center;
@@ -23,9 +25,29 @@
 }
 
 .page {
-  max-width: 1600px;
+  max-width: 1440px;
   min-width: 400px;
-  flex-basis: 80%;
+  flex-basis: 75%;
+}
+
+.groupping {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.groupping_header {
+  flex-basis: 100%;
+}
+
+.groupping_article {
+  color:black;
+  flex-basis: 30%;
+  min-width: 300px;
+  background: orange;
+  padding: 10px;
+  margin: 10px;
+  flex-grow: 1;
 }
 
 .footer {
@@ -34,11 +56,38 @@
 }
 
 .header_style {
-  color: black;
-  background-color: lightgreen;
+  background: lightgreen;
 }
 
 .test_style {
-  color: black;
-  background-color: lightblue;
+  background: lightblue;
+}
+
+blockquote {
+  background: none repeat scroll 0 0 #fafafa;
+  border-bottom: 3px dashed #bababa;
+  border-top: 3px dashed #bababa;
+  color: #878787;
+  font-family: Georgia,serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.45;
+  padding: 10px 15px;
+  text-align: center;
+  margin: 10px;
+}
+figure {
+  background: #5f6a72;
+  padding: 10px;
+  margin: 0;
+  text-align: right;
+}
+figcaption {
+  color: #fff;
+  font-weight: bold;
+  font-style: italic;
+}
+figure img {
+    max-width: 100%;
+    height: auto;
 }
