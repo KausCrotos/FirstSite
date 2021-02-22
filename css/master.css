@@ -23,14 +23,9 @@
 }
 
 .page {
-  flex-grow: 8;
   max-width: 1600px;
-  min-width: 320px;
-}
-
-.item {
-  flex-basis: 10%;
-  flex-shrink: 3;
+  min-width: 400px;
+  flex-basis: 80%;
 }
 
 .footer {
