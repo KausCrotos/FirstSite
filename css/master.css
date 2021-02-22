@@ -1,0 +1,39 @@
+.test {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 200px) minmax(320px, 100%) minmax(0, 200px);
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer";
+}
+.header_style {
+  color: black;
+  background-color: lightgreen;
+}
+
+.test_style {
+  color: black;
+  background-color: lightblue;
+}
+
+.header {
+  color: black;
+  background-color: lightgray;
+  height: 50px;
+  display: grid;
+  grid-template-columns: minmax(80px, 200px) minmax(220px, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+  grid-area: header;
+}
+.main {
+  max-width: 1600px;
+  min-width: 300px;
+  grid-area: main;
+}
+.footer {
+  margin-top: auto;
+  height: 60px;
+  grid-area: footer;
+}
