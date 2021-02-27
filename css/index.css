@@ -1,0 +1,42 @@
+.bg{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow:  hidden;
+  filter:  drop-shadow(10px 10px 24px rgba(0, 0, 0, 0.8));
+}
+
+.frosted-glass-effect {
+  position: absolute;
+  background: url(../img/bg1.png), linear-gradient(45deg, rgba(8,14,88,0.8) 0%, rgba(8,14,88,0.6) 100%), url(../img/bg.jpg) 0 15%/100vmax;
+  background-blend-mode: screen, hue;
+  clip-path: ellipse(250px 150px at center);
+  width: 100%;
+  height: 100vh;
+  filter: blur(3px);
+  z-index: 1;
+  transition: 3s;
+}
+
+.frosted-glass-effect:hover{
+  clip-path: ellipse(1000px 600px at center);
+  filter: blur(0);
+  transform: scale(1.2);
+}
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/bg1.png), linear-gradient(45deg, rgba(8,14,88,0.8) 0%, rgba(8,14,88,0.6) 100%), url(../img/bg.jpg) 0 15%/100vmax;
+  background-blend-mode: screen, hue;
+  filter: blur(10px);
+  z-index: -1;
+}
+/*.background{
+  height: inherit;
+  background: url(../img/bg1.png), linear-gradient(45deg, rgba(8,14,88,0.8) 0%, rgba(8,14,88,0.6) 100%), url(../img/bg.jpg) 0 15%/100vmax;
+  background-blend-mode: screen, hue;
+  filter: blur(10px);
+  transition: 3s;
+}
+clip-path: circle(150px at center);
