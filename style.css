@@ -36,7 +36,6 @@ body{
   z-index: -1;
   filter: blur(50px);
 }
-
 .bg .ball.ball1,
 .bg .ball.ball1::before{
   background: linear-gradient(90deg, #f00, #0ff)
@@ -76,6 +75,10 @@ body{
     transform: translateX(-10vw) rotate(-720deg)
   }
 }
+.bg .ball:hover{
+  animation-play-state:paused;
+}
+
  svg{
    width: 0;
    height: 0;
