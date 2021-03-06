@@ -1,15 +1,82 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: black;
 }
- #canvas1 {
-   border: 2px solid white;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 300px;
-   height: 242px;
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:  #0E2A54;
+  overflow: hidden;
+}
+.bg {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  filter: url(#goo);
+}
+.bg .ball {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+ .bg .ball::before{
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  bottom: -50px;
+  right:-50px;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(50px);
+}
+
+.bg .ball.ball1,
+.bg .ball.ball1::before{
+  background: linear-gradient(90deg, #f00, #0ff)
+}
+
+.bg .ball.ball2,
+.bg .ball.ball2::before{
+  background: linear-gradient(90deg, #ffeb3b, #da00ff)
+}
+
+.bg .ball.ball1{
+  animation: animate1 30s linear infinite;
+}
+@keyframes animate1 {
+  0%{
+    transform: translateX(10vw) rotate(0deg)
+  }
+50%{
+    transform: translateX(80vw) rotate(360deg)
+  }
+  100%{
+    transform: translateX(10vw) rotate(720deg)
+  }
+}
+
+.bg .ball.ball2{
+  animation: animate2 30s linear infinite;
+}
+@keyframes animate2 {
+  0%{
+    transform: translateX(-10vw) rotate(0deg)
+  }
+  50%{
+    transform: translateX(-80vw) rotate(-360deg)
+  }
+  100%{
+    transform: translateX(-10vw) rotate(-720deg)
+  }
+}
+ svg{
+   width: 0;
+   height: 0;
  }

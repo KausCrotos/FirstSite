@@ -8,7 +8,20 @@
   <title>Document</title>
 </head>
 <body>
-  <canvas id="canvas1"></canvas>
-  <script src="script.js"></script>
+  <div class="bg">
+    <div class="ball ball1"></div>
+    <div class="ball ball2"></div>
+  </div>
+  <svg>
+    <filter id='goo'>
+     <feGaussianBlur in='SourceGraphic' stdDeviation='10'/>
+    <feColorMatrix values="
+    1 0 0 0 0
+    0 1 0 0 0
+    0 0 1 0 0
+    0 0 0 30 -10
+    "/>
+    </filter>
+  </svg>
 </body>
 </html>
