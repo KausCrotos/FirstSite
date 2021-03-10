@@ -3,83 +3,99 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background:  #0E2A54;
-  overflow: hidden;
-}
-.bg {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  filter: url(#goo);
-}
-.bg .ball {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
 
- .bg .ball::before{
-  content: '';
+.bg{
+  background: #FDF7FF;
   position: absolute;
-  top: -50px;
-  left: -50px;
-  bottom: -50px;
-  right:-50px;
-  border-radius: 50%;
-  z-index: -1;
-  filter: blur(50px);
-}
-.bg .ball.ball1,
-.bg .ball.ball1::before{
-  background: linear-gradient(90deg, #f00, #0ff)
+  top: 0;
+  left:0;
+  z-index: -100;
+  min-width: 100%;
+  min-height: 100vh;
 }
 
-.bg .ball.ball2,
-.bg .ball.ball2::before{
-  background: linear-gradient(90deg, #ffeb3b, #da00ff)
+.grid {
+  display: grid;
+  align-content: center;
 }
 
-.bg .ball.ball1{
-  animation: animate1 30s linear infinite;
-}
-@keyframes animate1 {
-  0%{
-    transform: translateX(10vw) rotate(0deg)
-  }
-50%{
-    transform: translateX(80vw) rotate(360deg)
-  }
-  100%{
-    transform: translateX(10vw) rotate(720deg)
-  }
+input[type="checkbox"] {
+  position: fixed;
+  z-index: 1;
+  top: 40px;
+  right: 100px;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
 
-.bg .ball.ball2{
-  animation: animate2 30s linear infinite;
-}
-@keyframes animate2 {
-  0%{
-    transform: translateX(-10vw) rotate(0deg)
-  }
-  50%{
-    transform: translateX(-80vw) rotate(-360deg)
-  }
-  100%{
-    transform: translateX(-10vw) rotate(-720deg)
-  }
-}
-.bg .ball:hover{
-  animation-play-state:paused;
+input[type="checkbox"]:before {
+  content: "Dark";
+  position: absolute;
+  color: #E6F4F1;
+  background-color: #002C45;
+  padding: 10px 20px;
 }
 
- svg{
-   width: 0;
-   height: 0;
- }
+input[type="checkbox"]:checked ~ * {
+  color: #E6F4F1;
+  background-color: #002C45;
+}
+
+input[type="checkbox"]:checked:before {
+  content: "Light";
+  position: absolute;
+  color: #002C45;
+  background-color: #E6F4F1;
+  padding: 10px 20px;
+}
+
+
+.content {
+  min-height: 100vh;
+  grid-template-columns: minmax(320px, 1600px);
+  grid-template-rows: 60px 1fr 80px;
+  justify-content: center;
+  color: #002C45;
+}
+
+.header {
+  color: #E6F4F1;
+  background-color: #002C45;
+  grid-template-columns: 100px 1fr;
+}
+
+.main {
+  align-content: stretch;
+}
+
+
+h1 {
+  color: #EF972C;
+}
+h1:hover, h2{
+  color: #5A98B7;
+}
+
+
+.attention{
+
+}
+.interest {
+}
+.desire {
+}
+.action {
+
+}
+
+.footer {
+  color: #E6F4F1;
+  background-color: #002C45;
+  grid-row: 3/4;
+}
+/*
+
+
+
+
+*/
