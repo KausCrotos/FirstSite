@@ -20,7 +20,7 @@
 }
 
 input[type="checkbox"] {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 40px;
   right: 100px;
