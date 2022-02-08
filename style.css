@@ -47,10 +47,10 @@ img {
   cursor: pointer;
   transition: ease-in 0.3s;
 }
-input {
+#dark {
   display: none;
 }
-input:checked ~ * {
+#dark:checked ~ * {
   color: var(--main-color1);
   background: var(--main-color2);
   --lb-before-bg: #FDF7FF;
