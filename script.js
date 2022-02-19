@@ -8,53 +8,55 @@
 
 // let arr1 = ['one', Infinity, 'free'];
 // let arr2 = ['free', ['four', 'five',['two', 'free']]];
-// let arr3 = [0, 1, 2, 3, 4];
+let arr3 = [ -1, 0, 1, 2, 5, 4, -3];
 // let arr = [...arr1,...arr2].join().split(',');
-let out = [
-  {from: 'four', to: 'five', data: 'data4'},
-  {from: 'two', to: 'free', data: 'data2'},
-  {from: 'six', to: {z: 'seven', x: 7}, data: 'data3'},
-  {from: 'five', to: 'six', data: 'data5'},
-  {from: 'one', to: 'two', data: 'data1'},
-  {from: 'free', to: 'four', data: 'data3'},
-];
-let bilet = JSON.parse(JSON.stringify(out));
-let acc = [];
-let ind;
-while (bilet.length) {
-    bilet.forEach (obj => {
-    if (bilet.find(item => obj.from !== item.to)){
-    ind = bilet.indexOf(obj);
-    acc.push(bilet[ind]);
-    bilet.splice(ind, 1);
+// let out = [
+//   {from: 'four', to: 'five', data: 'data4'},
+//   {from: 'two', to: 'free', data: 'data2'},
+//  {from: 'six', to: {z: 'seven', x: 7}, data: 'data3'},
+//   {from: 'five', to: 'six', data: 'data5'},
+//   {from: 'one', to: 'two', data: 'data1'},
+//   {from: 'free', to: 'four', data: 'data3'},
+// ];
+const sumOfFree = (arr, target = 0) => {
+  let arrA = [];
+  arr = arr.sort((a,b)=> a-b);
+  for ( let i = 0; i < arr.length; i++) {
+    for ( let j = 0; j < arr.length; j++) {
+      let num = arr.find(el => el === target - arr[i] - arr[j])
+      let res = [arr[i], arr[j], num].sort((a,b)=> a-b)
+      if (num !== undefined)
+      arrA.push(res);
     }
-  });
+  }
+  let str =[];
+  for ( let i = 0; i < arrA.length; i++) {
+    if (arrA.length > 0){
+    let strtemp = arrA[i].join(',');
+    str.push(strtemp)
+    }
+  }
+  let result = new Set(str);
+return result;
 };
-acc[5].to = 'seven';
-
-
-console.log(acc);
-console.log(bilet);
-console.log(out);
-
-// let bilet = JSON.parse(JSON.stringify(out));
-// let map1 = bilet.map((ob,i) => bilet[i].from);
-// let map2 = bilet.map((ob,i) => bilet[i].to);
-// let num = 1;
-// let p;
-// let map = bilet.reduce (acc => {
-//   map1.forEach(item => {
-//     if (!map2.includes(item)) {
-//       p = map1.indexOf(item);
-//       delete map1[p];
-//       delete map2[p];
-//       bilet[p].id = num;
-//       num++;
-//       acc.push(bilet[p]);
+// const sumOfTwo = (arr, target = 0) => {
+//   let arrB = [];
+//   for ( let i = 0; i < arr.length; i++) {
+//     let obj = target - arr[i] ;
+//      if (obj !== arr[i]){
+//       arrB.push(obj);
 //     }
-//   });
-// return acc;
-// },[]);
-// map[5].to = 'seven';
-// console.log(map);
-// console.log(out);
+//   }
+//   let intersection = arr.filter(x => arrB.includes(x)) ;
+//   return intersection;
+// };
+// const sumOfTwo = (arr, target) => {
+// 	for ( let i = 0; i < arr.length; i++) {
+//     for ( let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] + arr[j] === target) {
+//         return `${arr[i]} + ${arr[j]}`
+//       }
+//     }
+//   }
+// };
+console.log(sumOfFree(arr3))
